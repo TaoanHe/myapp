@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		 <!--viewport是指设备上屏幕用来显示我们的网页的那块区域  让宽度等于设备的宽度-->	
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />		
+		<title>Chinese Restaurant</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/restaurant.css" />
+		<link rel="stylesheet" href="../css/contact-buttons.css" />
+		<link rel="stylesheet" href="../css/popuo-box.css" />
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.contact-buttons.js"></script>
+		<script>
+			window.onload=function(){
+				$(function(){
+					var flag=true;
+			        $(".show-hide-contact-bar").on("click",function(){
+				        if(flag){
+					        $(".show-hide-contact-bar span").removeClass("fa-angle-left");
+					        $(".show-hide-contact-bar span").addClass("fa-angle-right");
+					        $(".cb-ancor").addClass("cb-hidden");
+				        }
+				        else{
+					        $(".show-hide-contact-bar span").removeClass("fa-angle-right");
+					        $(".show-hide-contact-bar span").addClass("fa-angle-left");
+					        $(".cb-ancor").removeClass("cb-hidden");
+				        }
+				        flag = !flag
+			        })
+				})
+			}
+			
+		</script>
+		<script src="../js/modernizr.custom.min.js"></script>
+		<script src="../js/jquery.magnific-popup.js"></script>
+		<script>
+			$(document).ready(function() {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+																			
+			});
+	   </script>	
+	   
+		<script src="../js/zepto.min.js"></script>
+		<!--返回顶部-->
+		<script src="../js/jquery.backTop.min.js"></script>
+		<script>
+		    $(document).ready( function() {
+			    $('#backTop').backTop({
+				    'position' : 1200,
+				    'speed' : 500,
+				    'color' : 'red',
+			    });
+		    });
+	    </script>
+	</head>
+	<body>
+		<!--顶部导航栏-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!--navbar屏幕小于768时会出现在右侧的button-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbar-collapse-1">
+						<!--sr-only和icon-bar是在bootstrap里的menu样式-->
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">
+						<!--hidden-xs 是会在屏幕大于767时会出现 否则隐藏-->
+						<img src="../img/logo.png" class="hidden-xs" alt="" />
+						<!--visible-xs 是与hidden-xs相反的-->
+						<h3 class="visible-xs">ChineseRestaurant</h3>
+					</a>
+				</div>
+				<!--navbar-collapse collapse 和hidden-xs相似-->
+				<div class="navbar-collapse collapse" id="navbar-collapse-1" style="height:1px">
+					<!--navbar-nav 是在大于767时folat left   navbar-right 则相反-->
+					<ul class="nav navbar-nav navbar-right" id="col">
+						<li>
+							<a href="#" class="page-scroll">Home</a>
+						</li>
+						<li> <a href="#" class="page-scroll">Services</a>   </li>
+						<li> <a href="#menu" class="page-scroll">Menu</a>       </li>
+						<li> <a href="#staff" class="page-scroll">Staff</a>      </li>
+						<li> <a href="#portfolio" class="page-scroll">Portfolio</a>  </li>
+						<li> <a href="#booking" class="page-scroll">Booking</a>    </li>
+						<li> <a href="#" class="page-scroll">Contact Us</a> </li>					
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--轮播图-->
+		<header id="intro">
+			<div class="carousel slide" id="carousel-example-generic" data-ride = "carousel">
+				<!--轮播的红点-->
+				<ul class="carousel-indicators">
+					<li class="active" data-target = "#carousel-example-generic" data-slide-to = "0"></li>
+					<li class="" data-target = "#carousel-example-generic" data-slide-to = "1"></li>
+					<li class="" data-target = "#carousel-example-generic" data-slide-to = "2"></li>
+					<li class="" data-target = "#carousel-example-generic" data-slide-to = "3"></li>
+					<li class="" data-target = "#carousel-example-generic" data-slide-to = "4"></li>
+					<li class="" data-target = "#carousel-example-generic" data-slide-to = "5"></li>
+				</ul>
+				<!--装轮播图的大盒子-->
+				<div class="carousel-inner" id="tu">
+					<!--轮播的每个盒子-->
+					<div  class="item active">
+						<img class="lun" src="../img/1.jpg"  alt="First slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img  class="lun" src="../img/3.jpg"  alt="Second slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img  class="lun" src="../img/4.jpg"  alt="Third slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img  class="lun" src="../img/5.jpg"  alt="Thirh slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img  class="lun" src="../img/6.jpg"  alt="Filr slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img  class="lun" src="../img/7.jpg"  alt="Six slide" />
+						<div class="header-text hidden-xs">
+							<div class="col-md-12 text-center">
+								<h2>Welcome to Chinese-Restaurant</h2>
+								<br />
+								<h3>Do you like chinese food ? finsh ! finsh ! finsh !</h3>
+								<br />
+							</div>
+							<div class="text-btn">
+								<a href="#" class="btn btn-1 btn-sm">About Us</a>
+								<a href="#" class="btn btn-1 btn-sm">Our Works</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--两个前后页按钮-->
+			<a href="#carousel-example-generic" class="left carousel-control" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a href="#carousel-example-generic" class="right carousel-control" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</header>
+	
+	    <!--<script>
+			var contianer = document.getElementById('tu');
+			contianer.addEventListener("touchstart",function(e){
+				e.preventDefault();
+			})
+			$(function(){
+				var w=$("#tu").find(".item").eq(0).width();
+				console.log($("#tu").find(".item"));
+				console.log(w);
+				var n=0;
+				$("#tu").on("swipeLeft",function(){
+					n++;
+					console.log($("#tu").find(".item").length);
+					if(n>$("#tu").find(".item").length-1){
+						n=$("#tu").find(".item").length-1;
+					}
+					$(".lun").css("transform","translate3d(-"+n*+w+"px,0,0)");
+				})
+				$("#tu").on("swipeRight",function(){
+					n--;
+					if(n<0){
+						n=0;
+					}
+					$(".lun").css("transform","translate3d(-"+n*+w+"px,0,0)");
+				})
+//				$("#btn").on("tap",function(){
+//					location.href="https://www.baidu.com";
+//				})
+			})
+		</script>-->
+	
+	    <a id="backTop" class="red" style="right: 40px;bottom: 40px;position: fixed;display: inline;">Back To Top</a>
+	    
+	    
+	    <div class="index-page" id="page-content">
+	    	<div id="services"></div>
+	    	<section class="box-content box-1">
+	    		<div class="container">
+	    			<div class="row">
+	    				<div class="col-sm-4">
+	    					<div class="service">
+	    						<a href="#">
+	    							<img src="../img/icon1.png" alt="Our Story" />
+	    						</a>
+	    						<h3>Our Story</h3>
+	    						<p>
+	    							" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " 
+	    						</p>
+	    						<a href="#" class="btn btn-2 btn-sm">Read More</a>
+	    					</div>
+	    				</div>
+	    				<div class="col-sm-4">
+	    					<div class="service">
+	    						<a href="#">
+	    							<img src="../img/icon2.png" alt="Our Menu" />
+	    						</a>
+	    						<h3>menu     </h3>
+	    						<p>
+	    							" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " 
+	    						</p>
+	    						<a href="#" class="btn btn-2 btn-sm">Read More</a>
+	    					</div>
+	    				</div>
+	    				<div class="col-sm-4">
+	    					<div class="service">
+	    						<a href="#">
+	    							<img src="../img/icon3.png" alt="Our Location" />
+	    						</a>
+	    						<h3>Map</h3>
+	    						<p>
+	    							" Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " 
+	    						</p>
+	    						<a href="#" class="btn btn-2 btn-sm">Read More</a>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</section>
+	        <section class="box-content box-2 box-style" id="menu">
+	        	<div class="container">
+	        		<div class="row heading">
+	        			<div class="col-lg-12">
+	        				<h2>"Menu"</h2>
+	        			</div>
+	        			<div class="intro">
+	        				" Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut "<br />" laoreet dolore magna aliquam erat volutpat.
+						Ut wisi enim ad.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut ."
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-xs-6">
+	        				<div class="box-item">
+	        					<div class="col-sm-6">
+	        						<div class="media">
+	        					        <img class="media__image" src="../img/___-____1x.png" alt="" />
+	        				            <div class="media__body">
+	        				    	        <h2>￥18</h2>
+	        				    	        <p>Only</p>
+	        				            </div>
+	        				        </div>
+	        					</div>
+	        					<div class="col-sm-6">
+	        				        <div class="wrapper">
+	        					        <h3>That's Delicious</h3>
+	        					        <p>
+	        						" Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut "
+	        					        </p>
+	        					        <a class="btn btn-3" href="#">Read More</a>
+	        				        </div>
+	        			        </div>
+	        			        <div class="clear"></div>
+	        		        </div>
+	        	        </div>
+	        	        <div class="col-xs-6">
+	        				<div class="box-item">
+	        					<div class="col-sm-6">
+	        						<div class="media">
+	        					        <img class="media__image" src="../img/___-____1x.png" alt="" />
+	        				            <div class="media__body">
+	        				    	        <h2>￥18</h2>
+	        				    	        <p>Only</p>
+	        				            </div>
+	        				        </div>
+	        					</div>
+	        					<div class="col-sm-6">
+	        				        <div class="wrapper">
+	        					        <h3>That's Delicious</h3>
+	        					        <p>
+	        						" Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut "
+	        					        </p>
+	        					        <a class="btn btn-3" href="#">Read More</a>
+	        				        </div>
+	        			        </div>
+	        			        <div class="clear"></div>
+	        		        </div>
+	        	        </div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-xs-6">
+	        				<div class="box-item">
+	        					<div class="col-sm-6">
+	        						<div class="media">
+	        					        <img class="media__image" src="../img/___-____1x.png" alt="" />
+	        				            <div class="media__body">
+	        				    	        <h2>￥18</h2>
+	        				    	        <p>Only</p>
+	        				            </div>
+	        				        </div>
+	        					</div>
+	        					<div class="col-sm-6">
+	        				        <div class="wrapper">
+	        					        <h3>That's Delicious</h3>
+	        					        <p>
+	        						" Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut "
+	        					        </p>
+	        					        <a class="btn btn-3" href="#">Read More</a>
+	        				        </div>
+	        			        </div>
+	        			        <div class="clear"></div>
+	        		        </div>
+	        	        </div>
+	        	        <div class="col-xs-6">
+	        				<div class="box-item">
+	        					<div class="col-sm-6">
+	        						<div class="media">
+	        					        <img class="media__image" src="../img/___-____1x.png" alt="" />
+	        				            <div class="media__body">
+	        				    	        <h2>￥18</h2>
+	        				    	        <p>Only</p>
+	        				            </div>
+	        				        </div>
+	        					</div>
+	        					<div class="col-sm-6">
+	        				        <div class="wrapper">
+	        					        <h3>That's Delicious</h3>
+	        					        <p>
+	        						" Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut "
+	        					        </p>
+	        					        <a class="btn btn-3" href="#">Read More</a>
+	        				        </div>
+	        			        </div>
+	        			        <div class="clear"></div>
+	        		        </div>
+	        	        </div>
+	        		</div>	        				
+	        	</div>
+	        		
+	        </section>
+	        <section class="box-content box-3" id="staff">
+	        	<div class="container">
+	        		<div class="row heading">
+	        			<div class="col-lg-12">
+	        				<h2>
+	        					"SUPER CHEF"
+	        				</h2>
+	        				<div class="intro">
+	        					"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut"<br /> "laoreet dolore magna aliquam erat volutpat.
+						Ut wisi enim ad.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut ."
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="row center">
+	        			<div class="col-md-6">
+	        				<div class="wrap-img">
+	        					<img src="../img/8ea17c43230833.57e8a0345ad9f.jpg" alt="" />
+	        				</div>
+	        				<ul class="list-inline social-buttons">
+	        					<li>
+	        						<a href="#">
+	        							<i class="fa fa-twitter">
+	        								
+	        							</i>
+	        						</a>
+	        					</li>
+	        					<li>
+	        						<a href="#">
+	        							<i class="fa fa-facebook">
+	        								
+	        							</i>
+	        						</a>
+	        					</li>
+	        					<li>
+	        						<a href="#">
+	        							<i class="fa fa-linkedin">
+	        								
+	        							</i>
+	        						</a>
+	        					</li>
+	        					<li>
+	        						<a href="#">
+	        							<i class="fa fa-pinterest">
+	        								
+	        							</i>
+	        						</a>
+	        					</li>
+	        				</ul>
+	        			</div>
+	        			<div class="col-md-6">
+	        				<div class="row">
+	        					<h3>Nibh congue scripserit ne mel</h3>
+	        					<p>
+	        						"Nibh congue scripserit ne mel, pri ne amet mnesarchum. Dicat maiestat per modo simul signiferumque te. Dolore intellegat eu cum, ut est Nostro eloquentiam interpretaris vel id. Minim consequuntur et eam, nonumy equidem pri. Vide virtute ocurreret per in antiopam."
+	        					</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </section>
+	        <section class="box-content box-4 box-style" id="portfolio">
+	        	<div class="container">
+	        		<div class="row heading">
+	        			<div class="col-lg-12">
+	        				<h2>
+	        					"PROTFOLIO"
+	        				</h2>
+	        				<div class="intro">
+	        					"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut"<br /> "laoreet dolore magna aliquam erat volutpat.
+						Ut wisi enim ad.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut ."
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-gd" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/0d24ac35733889.57024384165d1.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-gd" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/0d24ac35733889.57024384165d1.jpg" alt="" />
+	        							<h4>Duangdong Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-sc" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/361cc435733889.5702438415415.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-sc" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/361cc435733889.5702438415415.jpg" alt="" />
+	        							<h4>Sichuan Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-hn" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/46c57635733889.5702438415043.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-hn" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/46c57635733889.5702438415043.jpg" alt="" />
+	        							<h4>Hunan Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-sh" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/5b94db35733889.5702438417399.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-sh" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/5b94db35733889.5702438417399.jpg" alt="" />
+	        							<h4>Shanghai Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-gd" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/0d24ac35733889.57024384165d1.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-gd" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/0d24ac35733889.57024384165d1.jpg" alt="" />
+	        							<h4>Duangdong Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-sc" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/361cc435733889.5702438415415.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-sc" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/361cc435733889.5702438415415.jpg" alt="" />
+	        							<h4>Sichuan Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-hn" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/46c57635733889.5702438415043.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-hn" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/46c57635733889.5702438415043.jpg" alt="" />
+	        							<h4>Hunan Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="col-sm-3">
+	        				<div class="portfolio-img">
+	        					<a href="#datail-sh" class="play-icon popup-with-zoom-anim">
+	        						<img src="../img/5b94db35733889.5702438417399.jpg" alt="" />
+	        					</a>
+	        					<div id="datail-sh" class="mfp-hide">
+	        						<div class="portfolio-items">
+	        							<img src="../img/5b94db35733889.5702438417399.jpg" alt="" />
+	        							<h4>Shanghai Food</h4>
+	        							<p>
+	        								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+	        							</p>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+	        </section>
+	        <section class="box-content box-5 " id="booking">
+	        	<div class="container">
+	        		<div class="row heading">
+	        			<div class="col-lg-12">
+	        				<h2>
+	        					"BOOKING"
+	        				</h2>
+	        				<div class="intro">
+	        					"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut"<br /> "laoreet dolore magna aliquam erat volutpat.
+						Ut wisi enim ad.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut ."
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-md-4 box-item">
+	        				<div class="row">
+	        					<h3>
+	        						Complete the Submision From
+	        					</h3>
+	        					<p>
+	        						"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut"
+	        					</p>
+	        					<h3>
+	        						Or Just Make a Call
+	        					</h3>
+	        					<p>
+	        						+654 1651 1634
+	        						<br />
+	        						+4654 6606 5458
+	        					</p>
+	        					<p>email@yournumber.com</p>
+	        				</div>
+	        			</div>
+	        			<div class="col-md-8">
+	        				<form action="" name="form1" method="post">
+	        					<div class="row">
+	        						<div class="col-md-6">
+	        							<div class="form-group">
+	        								<input type="text" class="form-control input-lg" name="name" id="name" placeholder="Your name" required="required"/>
+	        							</div>
+	        						</div>
+	        						<div class="col-md-6">
+	        							<div class="form-group">
+	        								<input type="email" class="form-control input-lg" name="email" id="email" placeholder="Your email" required="required"/>
+	        							</div>
+	        						</div>
+	        					</div>
+	        					<div class="row">
+	        						<div class="col-md-6">
+	        							<div class="form-group">
+	        								<input type="text" class="form-control input-lg" name="Subject" id="Subject" placeholder="Some Subject" required="required"/>
+	        							</div>
+	        						</div>
+	        						<div class="col-md-3">
+	        							<div class="form-group">
+	        								<input type="date" class="form-control input-lg" name="date" id="date" placeholder="Date" required="required"/>
+	        							</div>
+	        						</div>
+	        						<div class="col-md-3">
+	        							<div class="form-group">
+	        								<input type="time" class="form-control input-lg" name="time" id="time" placeholder="Time" required="required"/>
+	        							</div>
+	        						</div>
+	        					</div>
+	        					<div class="row">
+	        						<div class="col-md-12">
+	        							<div class="form-group">
+	        								<textarea id="message" class="form-control" name="message" rows="4" cols="25" placeholder="Anything Else Message" required="required"></textarea>
+	        							</div>
+	        							<button type="submit" class="btn btn-4 btn-block" name="btnBooking" id="btnBooking">
+	        								                Book  Now
+	        							</button>
+	        						</div>
+	        					</div>
+	        				</form>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </section>	
+	        
+	    </div>
+	    <footer>
+	    	<div class="wrap-footer">
+	    		<div class="container">
+	    			<div class="row">
+	    				<div class="col-md-4 col-footer footer-1">
+	    					<div class="footer-heading">
+	    						<h4>Parners</h4>
+	    					</div>
+	    					<div class="content">
+	    						<div class="row">
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/u=2118621994,3599467321&fm=27&gp=0.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/u=514598211,1450930798&fm=27&gp=0.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    						</div>
+	    						<div class="row">
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/u=647113605,995263064&fm=27&gp=0.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/u=860543855,3181965818&fm=27&gp=0.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    						</div>
+	    					    <div class="row">
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/u=363523048,2267220088&fm=27&gp=0.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    							<div class="col-md-6">
+	    								<a href="#">
+	    									<img src="../img/下载.jpg" alt="" />
+	    								</a>
+	    							</div>
+	    						</div>
+	    				    </div>
+	    				</div>
+	    				<div class="col-md-4 col-footer footer-2">
+	    				    <div class="footer-heading">
+	    				    	<h4>About Us</h4>
+	    				    </div>
+	    				    <div class="content">
+	    				    	<p>
+	    				    		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+	    				    	</p>
+	    				    </div>
+	    				</div>	
+	    				<div class="col-md-4 col-footer footer-3">
+	    				    <div class="footer-heading">
+	    				    	<h4>Labels</h4>
+	    				    </div>
+	    				    <div class="content">
+	    				    	<ul>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Foods
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Restaurant
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Chefs
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Drinks
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Menus
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Delicious
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Dining
+	    				    			</a>
+	    				    		</li>
+	    				    		<li>
+	    				    			<a href="#">
+	    				    				Beautiful
+	    				    			</a>
+	    				    		</li>
+	    				    	</ul>
+	    				    </div>
+	    				</div>	
+	    			</div>
+	    		</div>
+	    	</div>
+	    </footer>
+	    <div class="coppy-right">
+	    	<div class="wrap-footer">
+	    		<div class="clearfix">
+	    			<div class="col-md-6 col-md-offset-3">
+	    				<p>
+	    					Copyright 2017 - Designed By
+	    					<a href="#">Taoan</a>
+	    				</p>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div id="contact-buttons-bar" class="slide-on-scroll" data-top = "120px" style="left:0px;top:120px;z-index: 8;">
+	    	<button class="contact-button-link show-hide-contact-bar">
+	    		<span class="fa fa-angle-left">
+	    			
+	    		</span>
+	    	</button>
+	    	<a href="#" class="contact-button-link cb-ancor facebook" title="Follow on Facebook" target="_blank">
+	    		<span class="fa fa-facebook">
+	    			
+	    		</span>
+	    	</a>
+	    	<a href="#" class="contact-button-link cb-ancor linkedin" title="Follow on Linkedin" >
+	    		<span class="fa fa-linkedin">
+	    			
+	    		</span>
+	    	</a>
+	    	<a href="#" class="contact-button-link cb-ancor gplus" title="Visit on Google Puls" >
+	    		<span class="fa fa-google-plus">
+	    			
+	    		</span>
+	    	</a>
+	    	<a href="#" class="contact-button-link cb-ancor git" title="Follow on git" >
+	    		<span class="fa fa-github">
+	    			
+	    		</span>
+	    	</a>
+	    	<a href="#" class="contact-button-link cb-ancor phone separated" title="Call Us !" >
+	    		<span class="fa fa-phone">
+	    			
+	    		</span>
+	    	</a>
+	    	<a href="#" class="contact-button-link cb-ancor email" title="Send us an email" >
+	    		<span class="fa fa-envelope">
+	    			
+	    		</span>
+	    	</a>
+	    </div>
+	</body>
+</html>
